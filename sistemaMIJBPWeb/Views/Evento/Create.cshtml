@@ -1,0 +1,36 @@
+﻿@model CapaDominio.Entities.Evento
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" class="card shadow-lg">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="card-header">
+                <h4>Evento</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FechaEvento" class="control-label"></label>
+                    <input asp-for="FechaEvento" class="form-control" />
+                    <span asp-validation-for="FechaEvento" class="text-danger"></span>
+                </div>
+                <div class="form-group my-3">
+                    <input type="submit" value="Crear" class="btn btn-success" />
+                    <a class="btn btn-danger" asp-action="Index">Volver</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
